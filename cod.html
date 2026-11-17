@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailleur moderne | خياط عصري</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        fr: ['Plus Jakarta Sans', 'sans-serif'],
+                        ar: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e293b',
+                        gold: '#b45309',
+                        goldLight: '#d97706',
+                        cream: '#fafaf9',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-slate-800 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary text-amber-400 rounded-lg flex items-center justify-center font-bold text-xl shadow shrink-0">
+                    ✂
+                </div>
+                <div>
+                    <span data-i18n="brandName" class="text-lg sm:text-xl font-extrabold text-primary block leading-none">Tailleur moderne</span>
+                    <span data-i18n="brandSub" class="text-xs text-gold font-semibold">خياط عصري</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-slate-700">
+                <a href="#about" data-i18n="navAbout" class="hover:text-gold transition">عن المحل</a>
+                <a href="#services" data-i18n="navServices" class="hover:text-gold transition">الخدمات</a>
+                <a href="#gallery" data-i18n="navGallery" class="hover:text-gold transition">صور المحل</a>
+                <a href="#hours" data-i18n="navHours" class="hover:text-gold transition">أوقات العمل</a>
+                <a href="#location" data-i18n="navLocation" class="hover:text-gold transition">الموقع</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Language Switcher FR / AR -->
+                <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200" role="group" aria-label="Language Switcher">
+                    <button id="btn-fr" onclick="setLanguage('fr')" class="px-2.5 py-1 text-xs font-extrabold rounded-md transition text-slate-600 hover:text-primary">
+                        FR
+                    </button>
+                    <button id="btn-ar" onclick="setLanguage('ar')" class="px-2.5 py-1 text-xs font-extrabold rounded-md transition bg-primary text-white shadow-sm">
+                        عربي
+                    </button>
+                </div>
+
+                <a href="#location" data-i18n="navContactBtn" class="bg-gold hover:bg-goldLight text-white text-xs sm:text-sm font-bold px-3.5 sm:px-5 py-2.5 rounded-lg transition shadow-sm">
+                    تواصل معنا
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-24 md:py-32 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span data-i18n="heroBadge" class="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+                خياطة نسائية ورجالية • تفصيل وتصميم عصري • تعديل وإصلاح الملابس
+            </span>
+            <h1 data-i18n="heroTitle" class="text-3xl sm:text-5xl font-extrabold leading-tight mb-6">
+                Tailleur moderne للخياطة والتصميم العصري
+            </h1>
+            <p data-i18n="heroDesc" class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                نقدم خدمات تفصيل الملابس النسائية والرجالية، تصميم وتفصيل جميع أنواع الملابس العصرية، بالإضافة إلى خدمات التعديل والإصلاح بدقة عالية.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#location" data-i18n="heroBtnVisit" class="bg-gold hover:bg-goldLight text-white font-bold px-8 py-3.5 rounded-xl transition shadow-lg">
+                    زورنا في المحل
+                </a>
+                <a href="#services" data-i18n="heroBtnServices" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/25 text-white font-bold px-8 py-3.5 rounded-xl transition">
+                    خدماتنا
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Type & Quick Info Cards -->
+    <section id="about" class="max-w-6xl mx-auto px-4 -mt-12 relative z-10">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-gold flex items-center justify-center shrink-0 text-2xl">
+                    🧵
+                </div>
+                <div>
+                    <h3 data-i18n="cardTypeTitle" class="font-bold text-primary text-lg">نوع النشاط</h3>
+                    <p data-i18n="cardTypeDesc" class="text-slate-600 text-sm mt-1">Tailleur moderne (تفصيل وتصميم الملابس النسائية والرجالية، وتعديل الإصلاح).</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-gold flex items-center justify-center shrink-0 text-2xl">
+                    🕒
+                </div>
+                <div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <h3 data-i18n="cardStatusTitle" class="font-bold text-primary text-lg">حالة المحل الآن</h3>
+                        <span id="status-badge" class="text-xs font-bold px-2.5 py-0.5 rounded-full"></span>
+                    </div>
+                    <p data-i18n="cardHoursSummary" class="text-slate-600 text-sm mt-1">الإثنين – السبت: 09:30 ص – 12:30 م و 03:30 م – 08:45 م</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-gold flex items-center justify-center shrink-0 text-2xl">
+                    📍
+                </div>
+                <div>
+                    <h3 data-i18n="cardLocationTitle" class="font-bold text-primary text-lg">الموقع الجغرافي</h3>
+                    <p data-i18n="cardLocationDesc" class="text-slate-600 text-sm mt-1">أكادير، المغرب (متوفر على خرائط Google Maps)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-6xl mx-auto px-4 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span data-i18n="servicesEyebrow" class="text-gold font-bold text-sm uppercase tracking-wider">ماذا نقدم؟</span>
+            <h2 data-i18n="servicesTitle" class="text-3xl font-extrabold text-primary mt-1">خدمات التفصيل والتعديل</h2>
+            <p data-i18n="servicesSub" class="text-slate-600 mt-3 text-sm sm:text-base">نلبي جميع احتياجاتكم في عالم الخياطة العصرية والتعديلات الدقيقة.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <div class="text-3xl mb-4">👗</div>
+                <h3 data-i18n="srv1Title" class="font-bold text-lg text-primary mb-2">تفصيل الملابس النسائية والرجالية</h3>
+                <p data-i18n="srv1Desc" class="text-slate-600 text-sm leading-relaxed">تفصيل دقيق ومحترف لجميع أنواع الملابس النسائية والرجالية حسب المقاس والطلب.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <div class="text-3xl mb-4">✨</div>
+                <h3 data-i18n="srv2Title" class="font-bold text-lg text-primary mb-2">تصميم الملابس العصرية</h3>
+                <p data-i18n="srv2Desc" class="text-slate-600 text-sm leading-relaxed">ابتكار وتصميم أي نوع من الملابس العصرية بأحدث القصات والصيحات.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <div class="text-3xl mb-4">🪡</div>
+                <h3 data-i18n="srv3Title" class="font-bold text-lg text-primary mb-2">التعديل والإصلاح</h3>
+                <p data-i18n="srv3Desc" class="text-slate-600 text-sm leading-relaxed">خدمات التعديل، التقصير، التضييق، وإصلاح جميع أنواع الملابس باحترافية وسرعة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Photos Section -->
+    <section id="gallery" class="bg-slate-900 text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span data-i18n="galleryEyebrow" class="text-amber-400 font-bold text-sm uppercase tracking-wider">موقعنا</span>
+                <h2 data-i18n="galleryTitle" class="text-3xl font-extrabold mt-1">صور المحل</h2>
+                <p data-i18n="gallerySub" class="text-slate-400 mt-3 text-sm sm:text-base">صور حقيقية من داخل وخارج محل Tailleur moderne.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-800">
+                    <img src="image/3.jpeg" alt="واجهة المحل" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
+                        <span data-i18n="photo1Label" class="font-bold text-sm">واجهة المحل الخارجية</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-800">
+                    <img src="image/1.jpeg" alt="المحل من الداخل" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
+                        <span data-i18n="photo2Label" class="font-bold text-sm">المحل من الداخل وطاولة التفصيل</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-800">
+                    <img src="image/2.jpeg" alt="ماكينة الخياطة" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
+                        <span data-i18n="photo3Label" class="font-bold text-sm">ماكينة وخيوط الخياطة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Working Hours, Contact & Google Maps Section -->
+    <section id="location" class="max-w-6xl mx-auto px-4 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Contact Info & Opening Hours -->
+            <div id="hours" class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-slate-100">
+                <h2 data-i18n="infoTitle" class="text-2xl font-extrabold text-primary mb-6">معلومات المحل وأوقات العمل</h2>
+
+                <div class="space-y-4 mb-8 pb-6 border-b border-slate-100">
+                    <div class="flex items-center justify-between bg-slate-50 p-4 rounded-xl gap-2">
+                        <div>
+                            <span data-i18n="phoneLabel" class="text-xs text-slate-500 block">رقم الهاتف / واتساب</span>
+                            <a href="tel:+212661943051" dir="ltr" class="font-bold text-primary text-base hover:text-gold">
+                                +212 661-943051
+                            </a>
+                        </div>
+                        <a href="https://wa.me/212661943051" target="_blank" data-i18n="waBtn" class="text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-lg transition shrink-0">
+                            واتساب
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-primary mb-2 flex items-center gap-2">
+                    <span>📅</span> <span data-i18n="scheduleTitle">أوقات العمل الأسبوعية</span>
+                </h3>
+                <p data-i18n="breakNote" class="text-xs text-slate-500 mb-4">فترة الاستراحة: مغلق يومياً من 12:30 ظهراً إلى 03:30 مساءً</p>
+                
+                <ul class="space-y-3 text-sm">
+                    <li class="flex justify-between items-start py-1.5 border-b border-slate-50">
+                        <span data-i18n="dayMon" class="font-semibold text-slate-700">الإثنين</span>
+                        <div dir="ltr" class="text-right text-slate-600 text-xs sm:text-sm">
+                            <div>09:30 – 12:30</div>
+                            <div>15:30 – 20:45</div>
+                        </div>
+                    </li>
+                    <li class="flex justify-between items-start py-1.5 border-b border-slate-50">
+                        <span data-i18n="dayTue" class="font-semibold text-slate-700">الثلاثاء</span>
+                        <div dir="ltr" class="text-right text-slate-600 text-xs sm:text-sm">
+                            <div>09:30 – 12:30</div>
+                            <div>15:30 – 20:45</div>
+                        </div>
+                    </li>
+                    <li class="flex justify-between items-start py-1.5 border-b border-slate-50">
+                        <span data-i18n="dayWed" class="font-semibold text-slate-700">الأربعاء</span>
+                        <div dir="ltr" class="text-right text-slate-600 text-xs sm:text-sm">
+                            <div>09:30 – 12:30</div>
+                            <div>15:30 – 20:45</div>
+                        </div>
+                    </li>
+                    <li class="flex justify-between items-start py-1.5 border-b border-slate-50">
+                        <span data-i18n="dayThu" class="font-semibold text-slate-700">الخميس</span>
+                        <div dir="ltr" class="text-right text-slate-600 text-xs sm:text-sm">
+                            <div>09:30 – 12:30</div>
+                            <div>15:30 – 20:45</div>
+                        </div>
+                    </li>
+                    <li class="flex justify-between items-start py-1.5 border-b border-slate-50">
+                        <span data-i18n="dayFri" class="font-semibold text-slate-700">الجمعة</span>
+                        <div dir="ltr" class="text-right text-slate-600 text-xs sm:text-sm">
+                            <div>09:30 – 12:30</div>
+                            <div>15:30 – 20:45</div>
+                        </div>
+                    </li>
+                    <li class="flex justify-between items-start py-1.5 border-b border-slate-50">
+                        <span data-i18n="daySat" class="font-semibold text-slate-700">السبت</span>
+                        <div dir="ltr" class="text-right text-slate-600 text-xs sm:text-sm">
+                            <div>09:30 – 12:30</div>
+                            <div>15:30 – 20:45</div>
+                        </div>
+                    </li>
+                    <li class="flex justify-between items-center py-1.5">
+                        <span data-i18n="daySun" class="font-semibold text-slate-700">الأحد</span>
+                        <span data-i18n="closedText" class="text-rose-600 font-bold">مغلق</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="lg:col-span-7 bg-white p-4 sm:p-6 rounded-2xl shadow-md border border-slate-100">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 data-i18n="mapTitle" class="text-xl font-extrabold text-primary">موقعنا على Google Maps</h3>
+                        <p data-i18n="mapSub" class="text-slate-500 text-xs sm:text-sm">احصل على الاتجاهات المباشرة للوصول إلى المحل</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=30.422996570174583,-9.589309333165453" target="_blank" data-i18n="mapOpenBtn" class="text-xs font-bold text-gold hover:underline">
+                        فتح في خرائط جوجل ↗
+                    </a>
+                </div>
+
+                <div class="w-full h-[460px] rounded-xl overflow-hidden border border-slate-200">
+                    <iframe 
+                        id="gmap-iframe"
+                        src="https://maps.google.com/maps?q=30.422996570174583,-9.589309333165453&hl=ar&z=17&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-slate-400 py-8 text-center text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <p data-i18n="footerBrand" class="text-white font-bold mb-1">Tailleur moderne — خياط عصري</p>
+            <p data-i18n="footerRights" class="text-xs">جميع الحقوق محفوظة © 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

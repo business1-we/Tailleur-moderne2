@@ -1,0 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
+html[lang="fr"] body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html[lang="ar"] body {
+    font-family: 'Cairo', sans-serif;
+}
+
+.hero-bg {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.85)), url('image/3.jpeg');
+    background-size: cover;
+    background-position: center;
+}
